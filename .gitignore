@@ -9,3 +9,5 @@ work_dir/*
 memory/*
 # But do not ignore the directory itself
 !memory/
+
+.example.env
