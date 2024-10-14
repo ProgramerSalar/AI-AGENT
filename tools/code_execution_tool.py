@@ -26,6 +26,12 @@ def execute(agent:Agent ,code_text:str, **kwargs):
         # return local_vars.get("output", buffer.getvalue())
     result = json.dumps(output) if (output := execute_code(code_text)) else files.read_file("./prompts/fw.code_no_output.md")
     return result
+
+
+
+
+
+
 def wrap_code_with_return_and_function(code):
     # Parse the code into an AST
     parsed_code = ast.parse(code)
@@ -61,6 +67,9 @@ def wrap_code_with_return_and_function(code):
     # Convert the AST back to source code
     wrapped_code = compile(module, filename="<ast>", mode="exec")
     return wrapped_code
+
+
+
 def execute_user_code(code):
     try:
         wrapped_code = wrap_code_with_return_and_function(code)

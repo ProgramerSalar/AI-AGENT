@@ -3,6 +3,7 @@ from io import StringIO
 from typing import Optional, Dict
 from tools.helpers import extract_tools, rate_limiter, files
 from tools.helpers.print_style import PrintStyle
+
 from langchain.schema import AIMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.messages import HumanMessage
@@ -160,3 +161,7 @@ class Agent:
         if "execute" in functions_list: return functions_list["execute"] # Check if the module contains a function named "execute"
         if functions_list: return next(iter(functions_list.values())) # Return the first function if no "execute" function is found
         return None  # Return None if no functions are found
+    
+
+
+

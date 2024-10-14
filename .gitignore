@@ -11,3 +11,5 @@ memory/*
 !memory/
 
 .example.env
+
+chroma
